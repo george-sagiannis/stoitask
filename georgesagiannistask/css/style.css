@@ -393,25 +393,25 @@ a:-webkit-any-link {
 	.uk-button-primary1 {
 	    display: block;
 }
-@media (max-width: 766px) {
+@media (max-width: 773px) {
 .uk-button1 { 
 	display: none; 
 }
 	.uk-button-primary1 {
 	    display: none;
 }
-@media screen and (max-width: 766px) {
+@media screen and (max-width: 773px) {
    .sb-header__header__navigation__menu-container{
 	display: none;
   }
 }
-@media (max-width: 766px) {
+@media (max-width: 773px) {
    .sb-header__header__actions .fa
     {
         display: none; /* or whatever you want */
     }
 }
-@media (max-width: 766px) {
+@media (max-width: 773px) {
    .sb-header__header__actions__search-icon
     {
         display: none; /* or whatever you want */
