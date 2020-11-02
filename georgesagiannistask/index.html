@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta charset="utf-8"/>
+
+<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="script.js"></script>
+</head>
+
+
+<body>
+
+
+<header class="sb-header__header">
+	
+	<div class="sb-header__header__row">
+	  
+	  <div class="sb-header__header__navigation logo"><img src="images/stoiximan_logo.svg" alt="Stoiximan Logo"> 
+
+		<nav class="sb-header__header__navigation__menu-container">
+			
+			<ul class="sb-header__header__navigation__menu-container__main-menu">
+			
+				<li class="sb-header__header__navigation__menu-container__main-menu__item"><a href="#" class="sb-header__header__navigation__menu-container__main-menu__item">ΣΤΟΙΧΗΜΑ</a>
+				</li>
+    
+			    <li class="sb-header__header__navigation__menu-container__main-menu__item"><a href="#" class="sb-header__header__navigation__menu-container__main-menu__item__anchor">LIVE ΣΤΟΙΧΗΜΑ</a>
+				</li>
+
+			    <li class="sb-header__header__navigation__menu-container__main-menu__item"><a href="#" class="sb-header__header__navigation__menu-container__main-menu__item__anchor">VIRTUALS
+			    </a><span class="sb-header__header__navigation__menu-container__main-menu__item__badge"><span>HOT</span></span>
+				</li>
+
+			    <li class="sb-header__header__navigation__menu-container__main-menu__item"><a href="#" class="sb-header__header__navigation__menu-container__main-menu__item__anchor">CASINO
+			    <!----></a>
+				</li>
+
+			    <li class="sb-header__header__navigation__menu-container__main-menu__item"><a href="#" class="sb-header__header__navigation__menu-container__main-menu__item__anchor">LIVE CASINO
+			    <!----></a>
+				</li>
+
+			    <li class="sb-header__header__navigation__menu-container__main-menu__item"><a href="#" class="sb-header__header__navigation__menu-container__main-menu__item__anchor">VEGAS
+			    <!----></a>
+				</li>
+
+			    <li class="sb-header__header__navigation__menu-container__main-menu__item"><a href="#" class="sb-header__header__navigation__menu-container__main-menu__item__anchor">LIVE VEGAS
+			    <!----></a>
+				</li>
+
+			    <li class="sb-header__header__navigation__menu-container__main-menu__item"><a href="#" class="sb-header__header__navigation__menu-container__main-menu__item__anchor">FANTASY
+			    </a><span class="sb-header__header__navigation__menu-container__main-menu__item__badge"><span>NEW</span></span>
+				</li>
+
+			</ul> 
+
+
+        </nav>
+
+      </div> 
+    	
+
+
+<style>
+
+/* progress container */
+div#progressContainer {
+  border: solid 3px #000;
+  width: 272px;
+  height: 16px;
+  margin: auto;
+  padding: 0px;
+  text-align: left;
+  border-radius: 20px;
+  margin-bottom: 6px;
+}
+
+/* progress bar */
+div#progress {
+  background-color: #374456;
+  height: 11px;
+  padding-bottom: 4px;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.dropbtn {
+	font-weight: 700;
+	padding: 4px 0;
+	color: #FFFFFF;
+	font-family: Roboto;
+	font-size: 14px;
+	line-height: 16px;
+	opacity: 0.87;
+	margin-left: 8px;
+	background: none;
+	width: 80px;
+  cursor: pointer;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 289px;
+  height: 362px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  top: 62px;
+  right: 4px;
+}
+.show {
+  display: block;
+}
+.incognito{
+  background: #E0E4EA;
+  height: 40px;
+  padding: 8px;
+}
+.incognito_text{
+  color: #101419;
+  font-family: Roboto;
+  font-size: 12px;
+  line-height: 16px;
+  width: 160px;
+  text-align: left;
+  display: inline-block;
+}
+.user{
+  float: left;
+  color: #101419;
+  font-family: Roboto;
+  font-size: 12px;
+  line-height: 16px;
+  width: 160px;
+  text-align: left;
+  margin: 8px;
+  display: inline-block;
+}
+.user_amount{
+  color: #101419;
+  font-family: Roboto;
+  font-size: 14px;
+  line-height: 16px;
+  width: 36px;
+  text-align: right;
+  float: right;
+  margin: 8px;
+  display: inline-block;
+}
+.line{
+  background-color: #E0E4EA;
+  width: 274px;
+  height: 1px;
+  margin: 8px;
+  display: inline-block;
+}
+.user-info {
+    position: absolute;
+    top: 55px;
+    right: 0;
+    z-index: 2000;
+    width: 289px;
+    height: 356px;
+    margin-top: 8px;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    white-space: nowrap;
+    color: #101419;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 8px rgba(0,0,0,.17);
+    box-shadow: 0 0 8px rgba(0,0,0,.17);
+    border-radius: 2px;
+    font-size: .85714rem;
+}
+.kz-icon-s {
+    width: 24px;
+    height: 24px;
+}
+.user-info__incognito {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 40px;
+    padding: 8px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #E0E4EA;
+  	margin-left: -8px;
+  	width: 288px;
+  	color: #101419;
+  	font-family: Roboto;
+  	font-size: 12px;
+  	line-height: 16px;
+}
+
+.user-info__container {
+    margin: 0 8px;
+}
+.user-info__text, .user-info__title {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+}
+.user-info__title {
+    padding: 0 4px;
+}
+.toggle-switch {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-item-align: center;
+    align-self: center;
+}
+.toggle-switch input {
+    display: none;
+}
+.toggle-switch__slider, .toggle-switch__slider:before {
+    -webkit-transition: .1s cubic-bezier(.64,0,.35,1);
+    transition: .1s cubic-bezier(.64,0,.35,1);
+}
+.toggle-switch__slider {
+    position: relative;
+    width: 48px;
+    height: 24px;
+    background-color: #b6bcc6;
+    border-radius: 64px;
+    cursor: pointer;
+}
+.user-info__details {
+    padding: 8px 0;
+    border-top: 1px solid #e0e4ea;
+}
+.user-info__details__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 8px;
+}
+.user-info__text, .user-info__title {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+}
+.user-info__total_amount {
+    color: #101419;
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    margin-left: auto;
+    color: #101419;
+    width: auto;
+    margin-left: 10px;
+}
+.user-info__amount {
+    color: rgba(16,20,25,.54);
+    font-weight: 700;
+    margin-left: 8px;
+    opacity: 0.54;
+}
+.user-info__details__item:last-child {
+    margin-bottom: 0;
+}
+section {
+    display: block;
+}
+.user-info__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 4px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.user-info__footer__link {
+    -webkit-box-flex: 1;
+    -ms-flex: auto;
+    flex: auto;
+}
+.uk-button-tertiary {
+    background-color: #fff;
+    color: rgba(28,32,38,.87);
+    border: 1px solid rgba(28,32,38,.87);
+}
+.uk-button {
+    margin: 0;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 2px;
+    font-weight: 500;
+    color: #101419;
+    font-family: Roboto;
+    font-size: 12px;
+    line-height: 16px;
+    width: 203px;
+    text-align: center;
+}
+.user-info__footer__logout {
+    cursor: pointer;
+}
+.kz-icon-s {
+    width: 24px;
+    height: 24px;
+}
+
+.user-info__header__info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 8px 0;
+    font-weight: 700;
+}
+.user-info__header__info2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0px 0;
+    font-weight: 700;
+    position: relative;
+}
+.user-info__text{
+  color: #101419;
+  font-family: Roboto;
+  font-size: 12px;
+  line-height: 16px;
+  width: 160px;
+}
+.user-info__bonus{
+  color: #101419;
+  font-family: Roboto;
+  font-size: 12px;
+  line-height: 16px;
+  width: 36px;
+}
+.user-info__open_bets{
+  color: #1E87F0;
+  font-family: Roboto;
+  font-size: 12px;
+  line-height: 16px;
+  width: 160px;
+}
+.user-info__bet_points_road_to_glory{
+  color: #1E87F0;
+  font-family: Roboto;
+  font-size: 12px;
+  line-height: 16px;
+  width: 160px;
+}
+.user-info__text, .user-info__title, .user-info__open_bets, .user-info__bet_points_road_to_glory{
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+}
+.user-info__locked{
+  color: #FFFFFF;
+  font-family: Roboto;
+  font-size: 11px;
+  line-height: 12px;
+  width: 58px;
+  background: #C00151;
+  border-radius: 20px;
+  padding: 1px 5px;
+  text-align: center;  
+}
+.user-info__amount {
+    color: rgba(16,20,25,.54);
+    font-weight: 700;
+    margin-left: 8px;
+}
+.bonus__amount {
+    color: #101419;
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    margin-left: auto;
+    color: #101419;
+    width: 52px;
+}
+.bonus_width{
+  width: 171px;
+}
+.switch {
+  position: absolute;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  top: 3px;
+  right: 8px;
+}
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: #2196F3;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+
+
+
+</style>
+    	<div class="sb-header__header__actions">
+    		    
+
+    		<i class="fa fa-gift" style=" background-color: #1C2026; opacity: 0.87; font-size: 36px; color: white; border-radius: 8px 0px 0px 8px; margin-left: 6px;"></i>
+    
+    	    <div class="sb-header__header__actions__cta-container"><a href="#" translate-context="loginbox" class="uk-button1 uk-button-primary1">ΠΡΟΣΦΟΡΕΣ</a>
+			</div>
+
+
+    		<div class="sb-header__header__actions__search-icon uk-visible@s"><i class="kz-icon-s icon--color-white-snow icon--opacity-xl-full has-tooltip"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.6098577,17.7311916 L16.5150918,14.6347304 C18.467383,11.7107008 17.8844326,7.7817968 15.1673462,5.55134448 C12.4502598,3.32089217 8.48528386,3.51641008 6.00056426,6.00336994 C3.51584466,8.4903298 3.32183561,12.4575467 5.55202719,15.1753328 C7.78221877,17.893119 11.7091775,18.4749996 14.6309157,16.5206053 L17.7256816,19.6163999 C18.2497246,20.1278667 19.0858147,20.1278667 19.6098577,19.6163999 C20.1300474,19.095768 20.1300474,18.2518236 19.6098577,17.7311916 Z M10.8392446,6.00796943 C13.5069824,6.00796943 15.6696111,8.17178291 15.6696111,10.8409821 C15.6696111,13.5101813 13.5069824,15.6739948 10.8392446,15.6739948 C8.17150681,15.6739948 6.00887805,13.5101813 6.00887805,10.8409821 C6.01181555,8.17300128 8.17272451,6.01090855 10.8392446,6.00796943 Z"></path></svg></i>
+    		</div> 
+
+
+    		<div class="sb-header__header__actions__contact-container"><a href="#" title="Επικοινωνία" class="sb-header__header__actions__contact-container__icon"><i class="kz-icon-s icon--opacity-xl-full icon--color-white-snow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21,13.5 C20.9974027,14.7796495 20.2713219,15.9477684 19.125,16.5165 L19.125,16.875 C19.125,18.64125 17.73675,19.875 15.75,19.875 L14.4165,19.875 C14.0770457,20.462952 13.3850086,20.7496032 12.7292333,20.5738887 C12.0734581,20.3981743 11.6174619,19.8039085 11.6174619,19.125 C11.6174619,18.4460915 12.0734581,17.8518257 12.7292333,17.6761113 C13.3850086,17.5003968 14.0770457,17.787048 14.4165,18.375 L15.75,18.375 C16.65675,18.375 17.625,17.9805 17.625,16.875 L17.625,16.4475 C17.3894093,16.2375712 17.2532566,15.9380352 17.25,15.6225 L17.25,9.75 C17.25,6.85050506 14.8994949,4.5 12,4.5 C9.10050506,4.5 6.75,6.85050506 6.75,9.75 L6.75,15.6225 C6.74994801,15.9876859 6.57264169,16.3301258 6.27445367,16.5409447 C5.97626565,16.7517637 5.59430054,16.8047286 5.25,16.683 C3.90278015,16.2055342 3.00241684,14.9312017 3.00241684,13.501875 C3.00241684,12.0725483 3.90278015,10.7982158 5.25,10.32075 L5.25,9.75 C5.25000006,6.02207798 8.27207798,3.0000001 12,3.0000001 C15.727922,3.0000001 18.7499999,6.02207798 18.75,9.75 L18.75,10.32075 C20.0985207,10.7958537 21.0004175,12.0702338 21,13.5 Z M12,16.50075 C11.482233,16.50075 11.0625,16.081017 11.0625,15.56325 C11.0625,15.045483 11.482233,14.62575 12,14.62575 C12.517767,14.62575 12.9375,15.045483 12.9375,15.56325 C12.9375,16.081017 12.517767,16.50075 12,16.50075 Z M10.125,10.875 C9.6075258,10.8750002 9.18791398,10.455724 9.1875,9.93825 C9.18843818,8.5339017 10.2251576,7.34546359 11.6163815,7.15391399 C13.0076053,6.96236438 14.3269199,7.82641371 14.707342,9.17825472 C15.087764,10.5300957 14.4126931,11.9553857 13.12575,12.5175 C13.0116311,12.5673764 12.9379812,12.680208 12.93825,12.80475 L12.93825,13.221 C12.93825,13.738767 12.518517,14.1585 12.00075,14.1585 C11.482983,14.1585 11.06325,13.738767 11.06325,13.221 L11.06325,12.80475 C11.0634302,11.9352532 11.5783273,11.148335 12.375,10.8 C12.8037584,10.6128711 13.0289452,10.1382977 12.9027281,9.687831 C12.7765111,9.23736428 12.3375238,8.94888696 11.8739557,9.01178057 C11.4103876,9.07467418 11.0641315,9.4696877 11.0625,9.9375 C11.0625,10.455267 10.642767,10.875 10.125,10.875 Z"></path></svg></i></a> <!---->
+    		</div> <!----> 
+
+
+
+    		<section class="user-main-info-container">
+    			
+    			<div class="sb-header__header__actions__drop-icon-container"><a href="#"><i class="kz-icon-s icon--color-white-snow has-tooltip"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.9253325,8.22133317 C19.9706669,8.2400266 20.00018,8.28429622 19.9999992,8.33333315 L19.9999992,16.3333321 C19.9999992,17.0697116 19.4030456,17.6666652 18.666666,17.6666652 L5.33333448,17.6666652 C4.59695491,17.6666652 4.00000132,17.0697116 4.00000132,16.3333321 L4.00000132,8.33333315 C3.99977498,8.2846722 4.02864269,8.24058334 4.07333464,8.22133317 C4.11887874,8.20158775 4.17187924,8.21192285 4.20666796,8.24733317 L10.7020004,14.743999 C11.4178785,15.459477 12.578122,15.459477 13.2940001,14.743999 L19.7919992,8.24733317 C19.8269722,8.21226708 19.879747,8.201976 19.9253325,8.22133317 Z M11.4100003,14.0373324 L4.95333453,7.57999992 C4.8641789,7.49084045 4.83296175,7.35900602 4.87266787,7.2393333 C4.94466786,7.02 5.15000117,7 5.33333448,7 L18.666666,7 C18.8493327,7 19.0533326,7.02 19.126666,7.2393333 C19.1663721,7.35900602 19.1351549,7.49084045 19.0459993,7.57999992 L12.5886668,14.0373324 C12.2629082,14.3621381 11.735759,14.3621381 11.4100003,14.0373324 Z"></path></svg></i></a>
+    			</div> 
+
+
+    			
+
+
+
+
+				 
+				  <div id="hideDiv" class="answer_list">
+
+
+				  		<button onclick="myFunction()" class="dropbtn">
+
+
+
+				  	2104.16€ <i class="kz-icon-xxs icon--color-white-snow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.8902506,9.30435918 C16.7391161,9.11635447 16.4552156,9.00003444 16.147406,9 L7.85245025,9 C7.54481538,9.00010468 7.26110181,9.11635866 7.1099869,9.3042305 C6.958872,9.49210233 6.96377777,9.72247288 7.12282506,9.90709798 L11.2703029,14.7116677 C11.4248183,14.8906525 11.7015222,15 11.9999281,15 C12.298334,15 12.5750379,14.8906525 12.7295533,14.7116677 L16.8770312,9.90709798 C17.0361262,9.72255341 17.0411774,9.4922461 16.8902506,9.30435918 Z"></path></svg></i>
+
+
+						</button> 
+
+				  	</div>
+
+
+
+
+
+				  <div id="myDropdown" class="dropdown-content">
+				     <div class="user-info__container">
+				      
+				      
+				<div class="user-info__incognito">
+				    <i class="kz-icon kz-icon-s"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.5572973,10.5614884 L16.3388649,10.5614884 L16.3388649,9.74669767 L16.3388649,8.3504186 C16.3388649,6.35413953 14.8978108,4.60316279 12.9122703,4.18706977 C12.3134865,4.0615814 11.7065676,4.06148837 11.107973,4.18706977 C9.12252703,4.60316279 7.68147297,6.35413953 7.68147297,8.35051163 L7.68147297,9.7467907 L7.68147297,10.5615814 L5.46304054,10.5615814 C5.25408108,10.5615814 5.08466216,10.728186 5.08466216,10.9336744 C5.08466216,11.1391628 5.25408108,11.3057674 5.46304054,11.3057674 L18.5572973,11.3057674 C18.7662568,11.3057674 18.9356757,11.1391628 18.9356757,10.9336744 C18.9356757,10.728186 18.7662568,10.5614884 18.5572973,10.5614884 Z M12.7545811,4.91497674 C14.3929595,5.25832558 15.5822027,6.70316279 15.5822027,8.35051163 L15.5822027,9.37469767 L8.43822973,9.37469767 L8.43822973,8.35051163 C8.43822973,6.70316279 9.62737838,5.25832558 11.2658514,4.91497674 C11.7596351,4.81153488 12.2607027,4.81153488 12.7545811,4.91497674 Z M16.2009459,15.8268837 C16.3370676,15.8867907 16.4246622,16.019814 16.4248514,16.1665116 L16.4248514,19.5548837 C16.4248514,19.7603721 16.2554324,19.9269767 16.046473,19.9269767 L12.5579189,19.9269767 L12.1883378,19.9269767 L11.8338919,19.9269767 L11.8321892,19.9269767 C11.831527,19.9269767 11.8303919,19.9269767 11.8303919,19.9269767 L7.97405405,19.9269767 C7.76509459,19.9269767 7.59567568,19.7603721 7.59567568,19.5548837 L7.59567568,16.1665116 C7.59567568,16.019814 7.68336486,15.8868837 7.81939189,15.8268837 C7.95551351,15.7667907 8.11481081,15.7911628 8.22605405,15.8889302 L11.9765405,19.1827907 L12.0437973,19.1827907 L15.7942838,15.8889302 C15.9054324,15.7912558 16.0649189,15.7669767 16.2009459,15.8268837 Z M9.39817568,14.8452093 C8.57368919,14.8452093 7.89014865,14.2369302 7.80813514,13.4301395 L7.64174324,11.7932093 L8.05985135,11.7932093 L11.9019054,11.7932093 L12.1184324,11.7932093 L15.9604865,11.7932093 L16.3785946,11.7932093 L16.2122027,13.4301395 C16.1300946,14.2368372 15.4465541,14.8452093 14.6220676,14.8452093 L13.96,14.8452093 C13.1625676,14.8452093 12.4979459,14.2823256 12.3797027,13.5068837 L12.2318514,12.5374884 L11.7883919,12.5374884 L11.6405405,13.5068837 C11.5222973,14.2823256 10.8576757,14.8452093 10.0602432,14.8452093 L9.39817568,14.8452093 Z"></path></svg></i> 
+				    <span translate-context="balancescontainer" class="user-info__title" data-msgid="INCOGNITO" data-current-language="el">Incognito Mode</span> 
+
+			<label class="switch">
+
+			<input type="checkbox" checked name="answer" value="Show Div" onclick="showDiv('hideDiv')" />  <span class="slider round"></span>
+
+			</label>
+
+
+
+
+
+				</div> 
+
+
+				      <div class="user-info__header">
+				        <div class="user-info__header__info">
+				          <span class="user-info__text"> jimtsip</span><input type="image" value="Start" onclick="redips.pollingStart(); return false" src="images/reload_button.png"/>
+				          <span class="user-info__total_amount">3,18€</span>
+				        </div>
+				      </div> 
+				      
+
+
+
+				        <section><!----> 
+				          <div class="user-info__details">
+				            <div class="user-info__details__item">
+				              <span class="user-info__text">Διαθέσιμα για στοιχηματισμό</span> 
+				              <span class="user-info__amount">3,18€</span>
+				            </div> 
+				            <div class="user-info__details__item">
+				              <span class="user-info__text">Διαθέσιμα για ανάληψη</span> 
+				              <span class="user-info__amount">3,18€</span>
+				            </div> <!----> <!---->
+				            <div class="user-info__details__item">
+				              <span class="user-info__open_bets">Ανοιχτά Στοιχήματα</span> 
+				              <span class="user-info__amount">0,00€</span>
+				            </div> <!----> <!---->
+				            <div class="user-info__details__item">
+				              <span class="user-info__bet_points_road_to_glory">Πόντοι Road to Glory</span> 
+				              <span class="user-info__amount">1440</span>
+				            </div> <!----> <!---->
+				          </div> <!---->
+				        </section>
+
+
+
+				        <section><!----> 
+				          <div class="user-info__details">
+				            <div class="user-info__header__info">
+				              <span class="user-info__bonus bonus_width">Bonus <span class="user-info__locked">LOCKED</span></span>   
+				              <span class="bonus__amount">100,00€</span>
+				           </div>
+                   <div class="user-info__header__info2">
+                      <div id="progressContainer" style="font-size: 10px;"><img src="images/locker.svg" style="position: absolute; top: -2px; left: 98px;"><img src="images/locker2.svg" style="position: absolute; top: -2px; right: 0px;">
+                        <div id="progress"><img src="images/locker.svg" style="position: absolute; top: -2px; left: 98px;"><img src="images/locker2.svg" style="position: absolute; top: -2px; right: 0px;"></div>
+                   </div>
+                   </div>
+				            <div class="user-info__details__item">
+				              <span class="user-info__text">Τζιραρισμένο</span> 
+				              <span class="user-info__amount">60€</span>
+				            </div> <!----> <!---->
+				            <div class="user-info__details__item">
+				              <span class="user-info__text">Υπόλοιπο Ξεκλειδώματος Bonus</span> 
+				              <span class="user-info__amount">40€</span>
+				            </div> <!----> <!---->
+				           <div class="user-info__details__item">
+				              <span class="user-info__text">Υπόλοιπο Ανάληψης Bonus</span> 
+				              <span class="user-info__amount">940€</span>
+				            </div> <!----> <!---->
+				          </div> <!---->
+
+				        </section>
+
+
+
+
+						<section>
+						        <div class="user-info__footer">
+						          <span class="uk-button uk-button-tertiary user-info__footer__link">ΛΟΓΑΡΙΑΣΜΟΣ</span> <!----> 
+						          <i class="kz-icon kz-icon-s icon--color-steel-800 icon--opacity-xl user-info__footer__logout GTM-logoutButton"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.8592479,12.3526531 C19.8451726,12.3657143 19.8310974,12.3787755 19.8135034,12.3983673 L16.3545195,15.6081633 C16.2383989,15.7159184 16.0835716,15.7714286 15.9287442,15.7714286 C15.7739169,15.7714286 15.6190895,15.7159184 15.502969,15.6081633 C15.2672091,15.3893878 15.2672091,15.0334694 15.502969,14.8146939 L17.9344623,12.5583673 L8.1944139,12.5583673 C7.86012756,12.5583673 7.58917968,12.3069388 7.58917968,11.9967347 C7.58917968,11.6897959 7.86012756,11.4383673 8.1944139,11.4383673 L17.9309435,11.4383673 L15.4818562,9.16571429 C15.2460963,8.94693878 15.2460963,8.59102041 15.4818562,8.3722449 C15.717616,8.15346939 16.1011656,8.15346939 16.3369254,8.3722449 L19.8170222,11.5983673 C19.8346162,11.6114286 19.8451726,11.6277551 19.8592479,11.6408163 C19.8627667,11.6440816 19.8627667,11.6440816 19.8662855,11.6473469 C19.8768419,11.6571429 19.8838795,11.6702041 19.8944359,11.6832653 C19.8979547,11.6865306 19.8979547,11.6897959 19.9014735,11.6930612 C19.9120299,11.7061224 19.9190675,11.7191837 19.9261051,11.7322449 C19.9261051,11.7322449 19.9296239,11.7355102 19.9296239,11.7387755 C19.9366615,11.7518367 19.9436991,11.7681633 19.9507367,11.7812245 C19.9542556,11.7844898 19.9542556,11.7844898 19.9542556,11.7877551 C19.9612932,11.8040816 19.9683308,11.8171429 19.9718496,11.8334694 C19.9753684,11.8334694 19.9753684,11.8367347 19.9753684,11.84 C19.9788872,11.8563265 19.982406,11.8693878 19.9859248,11.8857143 C19.9894436,11.8922449 19.9894436,11.8955102 19.9894436,11.9020408 C19.9929624,11.915102 19.9964812,11.9281633 19.9964812,11.9412245 C20,11.9608163 20,11.9771429 20,11.9967347 C20,12.0163265 20,12.0326531 19.9964812,12.0522449 C19.9929624,12.0653061 19.9929624,12.0783673 19.9894436,12.0914286 C19.9859248,12.0979592 19.9859248,12.1012245 19.9859248,12.1077551 C19.9859248,12.1240816 19.9788872,12.1371429 19.9753684,12.1534694 C19.9718496,12.1534694 19.9718496,12.1567347 19.9718496,12.16 C19.964812,12.1763265 19.9612932,12.1926531 19.9542556,12.2057143 C19.9507367,12.2089796 19.9507367,12.2089796 19.9507367,12.2122449 C19.9436991,12.2285714 19.9366615,12.2416327 19.9296239,12.2546939 C19.9296239,12.2546939 19.9261051,12.2579592 19.9261051,12.2612245 C19.9190675,12.2742857 19.9085111,12.2873469 19.9014735,12.3004082 C19.8979547,12.3036735 19.8979547,12.3069388 19.8944359,12.3102041 C19.8873983,12.3232653 19.8768419,12.3330612 19.8662855,12.3461224 C19.8627667,12.3493878 19.8627667,12.3493878 19.8592479,12.3526531 Z M7.27600616,5.12 C6.13591379,5.12 5.21046844,5.97877551 5.20694964,7.04 L5.20694964,16.9567347 C5.20694964,18.0146939 6.13591379,18.8767347 7.27600616,18.8767347 L11.7061799,18.8767347 C12.0404662,18.8767347 12.3114141,19.1281633 12.3114141,19.4383673 C12.3114141,19.7453061 12.0404662,19.9967347 11.7061799,19.9967347 L7.27600616,19.9967347 C5.47085991,19.9967347 4,18.6318367 4,16.9567347 L4,7.04 C4,5.36489796 5.47085991,4 7.27600616,4 L11.7800748,4 C12.1143611,4 12.385309,4.25142857 12.385309,4.56163265 C12.385309,4.86857143 12.1143611,5.12 11.7800748,5.12 L7.27600616,5.12 Z"></path></svg></i>
+						        </div>
+						</section>
+
+
+
+				        </div> 
+				  </div>
+
+
+ 			</section> 
+
+
+			     <div class="sb-header__header__actions__cta-container"><a href="#" class="uk-button uk-button-primary">ΚΑΤΑΘΕΣΗ</a>
+			     </div>
+
+
+    	</div>
+
+	</div> 
+
+</header>
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+// Prevents menu from closing when clicked inside 
+document.getElementById("myDropdown").addEventListener('click', function (event) {        
+event.stopPropagation(); 
+}); 
+</script>
+
+
+
+
+</body>
+
+<script>
+function showDiv(Div) {
+    var x = document.getElementById(Div);
+    if(x.style.display=="none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+
+
+
+</html>
